@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <link rel="stylesheet" href="/static/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <nav class="main-nav">
+                <ul class="nav-tabs">
+                    <li class="active"><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/wardrobe">Wardrobe</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                </ul>
+                
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <img src="/static/images/default_user2.png" alt="User Avatar" id="userAvatar">
+                    </div>
+                    <div class="user-details">
+                        <span class="user-name" id="userName">User</span>
+                        <span class="user-role" id="userRole">ESP32 Champion</span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="app-content">
+
+            <div class="dashboard-grid">
+                <section class="data-card device-data-section">
+                    <h2>Device Data</h2>
+                    
+                    <div class="chart-container">
+                        <div style="position: relative; height: 100%; width: 100%;">
+                            <canvas id="deviceDataChart"></canvas>
+                        </div>
+                    </div>
+                
+                    <div class="time-filter-buttons">
+                        <button id="last24HoursBtn" class="time-filter-btn">Last 24 Hours</button>
+                        <button id="lastWeekBtn" class="time-filter-btn active">Last Week</button>
+                    </div>
+                    
+                    <div class="device-selector">
+                        <div class="device-dropdown">
+                            <select id="deviceSelect" class="device-dropdown-select">
+                                <option value="">Select a device</option>
+                            </select>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="data-card weather-section">
+                    <h2>Weather Today</h2>
+                    
+                    <div class="location-container">
+                        <div class="weather-info">
+                            <p id="location">Location: Loading...</p>
+                            <p id="conditions">Conditions: Loading...</p>
+                            <p id="temperature">Temperature: Loading...</p>
+                            <p id="forecast">Forecast: Loading...</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="data-card ai-assistant-section">
+                    <h2>AI Assistant</h2>
+                    
+                    <div class="ai-content">
+                        <button id="weatherAssistBtn" class="assistant-button">
+                            What should I wear today?
+                        </button>
+                        
+                        <div class="ai-response" id="aiResponse">
+                            <div class="ai-header">
+                                <div class="ai-avatar">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <div class="ai-title">UCSD AI</div>
+                                <button class="close-btn" id="closeAiResponse">&times;</button>
+                            </div>
+                            <div class="ai-message" id="aiMessage">
+                                Loading recommendation...
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

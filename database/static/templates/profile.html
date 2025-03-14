@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/static/css/profile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <nav class="main-nav">
+                <ul class="nav-tabs">
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/wardrobe">Wardrobe</a></li>
+                    <li class="active"><a href="/profile">Profile</a></li>
+                </ul>
+                
+                <div class="user-profile">
+                    <div class="user-avatar">
+                        <img src="/static/images/default_user2.png" alt="User Avatar" id="userAvatar">
+                    </div>
+                    <div class="user-details">
+                        <span class="user-name" id="userName">User</span>
+                        <span class="user-role" id="userRole">ESP32 Champion</span>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+        <main class="app-content">
+            <section class="device-management">
+                <h1>Device Management</h1>
+                <p class="section-description">Add or remove your devices</p>
+                
+                <div class="device-content">
+                    <div class="device-image">
+                        <img src="/static/images/esp32.png" alt="ESP32 Device" id="deviceImage">
+                    </div>
+                    
+                    <div class="device-controls">
+                        <div class="device-control-item">
+                            <div class="control-label">Add a device</div>
+                            <div class="control-input">
+                                <input type="text" id="addDeviceId" placeholder="Device ID">
+                                <input type="text" id="addDeviceMac" placeholder="A1:B4:C5:C1:DD:3E">
+                                <button type="button" id="addDeviceBtn" class="control-button add-button">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="device-control-item">
+                            <div class="control-label">Remove a device</div>
+                            <div class="control-input">
+                                <input type="text" id="removeDeviceId" placeholder="Device ID">
+                                <button type="button" id="removeDeviceBtn" class="control-button remove-button">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <hr class="content-divider">
+            
+            <section class="my-devices">
+                <h2>My Devices</h2>
+                <div id="deviceList" class="device-list">
+                    
+                </div>
+            </section>
+        </main>
+        
+        <form action="/logout" method="post" id="logoutForm" class="logout-form">
+            <button type="submit" class="logout-button">Logout</button>
+        </form>
+    </div>
+    
+    <script src="/static/js/profile.js"></script>
+</body>
+</html>

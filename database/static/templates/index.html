@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TA7 - Homepage</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <a href="/" class="nav-logo">
+                    <span class="logo-text">TA7</span>
+                </a>
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><button class="signup-button" onclick="handleSignUp()">Sign up</button></li>
+                    <li><button class="login-button" onclick="handleLogin()">Sign in</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="home-container">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">The Project</h1>
+                <p class="hero-subtitle">Brief description of project</p>
+                <div class="hero-action">
+                    <button class="getStarted-button" onclick="handleGetStarted()">
+                        Get Started
+                        <span class="button-arrow">→</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="project-image">
+                    <img src="/static/images/ESP32.png">
+                </div>
+            </div>
+        </section>
+        
+        <section class="two-column-section">
+            <div class="column image-column">
+                <div class="team-image">
+                    <img src="/static/images/snowboard.jpeg">
+                </div>
+            </div>
+            <div class="column content-column">
+                <h2 class="section-title">The Team</h2>
+                <p class="section-description">Brief description of team</p>
+                
+                <div class="team-member">
+                    <h3 class="member-name">Brett Kinsella</h3>
+                    <p class="member-role">Student</p>
+                    <div class="member-divider"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <script src="/static/js/index.js"></script>
+</body>
+</html>
